@@ -30,17 +30,13 @@
             </ul>
         </nav>
     </header>
-    <section id="home">
-        <div class="container-home">
-        <main>
-            <div class="box flextwo">
+    <section id="home" style="padding-top: 100px;">
+        <div class="container">
                 <article>
                     <h2>Home</h2>
-                    <p>Web Ini dibuat untuk memenuhi tugas Proyek 1. Terima Kasih</p>
+                    <p class="span">Web Ini dibuat untuk memenuhi tugas Proyek 1. Terima Kasih</p>
                 </article>
-            </div>
-        </main>
-    </div>
+        </div>
     </section>
     <section id="profil">
         <div class="container">
@@ -174,6 +170,23 @@
     
 </div>
     <script src="js/main.js"></script>
+    <script>
+        let lastScrollTop = 0; // Variabel untuk menyimpan posisi scroll terakhir
+        const navbar = document.querySelector('nav'); // Mengambil elemen navbar
+    
+        window.addEventListener('scroll', function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+            if (currentScroll > lastScrollTop) {
+                // Scroll ke bawah
+                navbar.style.top = '-120px'; // Sesuaikan dengan tinggi navbar Anda
+            } else {
+                // Scroll ke atas
+                navbar.style.top = '0';
+            }
+            lastScrollTop = currentScroll;
+        });
+    </script>
 </body>
 
 </html>

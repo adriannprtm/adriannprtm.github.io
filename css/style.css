@@ -6,9 +6,11 @@ body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
 }
+
 /*navbar*/
 nav {
   position: fixed; 
+  transition: top 0.3s;
   top: 0; 
   left: 0; 
   width: 100%; 
@@ -126,17 +128,6 @@ nav ul li a:hover {
     padding: 8px;
     border-radius: 5px;
     margin: 10px;
-}
-
-.container-home {
-  display: flex;
-  flex-direction: column;
-
-  border: 2px solid #60AD77;
-  padding: 8px;
-  border-radius: 5px;
-  margin: 10px;
-  padding-top: 100px;
 }
 
 .container-galery {

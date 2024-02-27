@@ -140,8 +140,6 @@ nav ul li a:hover {
 }
 
 .profil {
-  display: flex;
-  flex-direction: column;
   padding: 8px;
   border-radius: 5px;
   margin-left: 20px;

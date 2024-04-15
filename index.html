@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrian Pratama Sasmita-1B</title>
     <link rel="stylesheet" href="css/style.css">  
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
@@ -25,6 +26,7 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#video">Video</a></li>
                 <li><a href="#maps">Maps</a></li>
+                <li><a href="#scraping">Data Scraping 1</a></li>
             </ul>
             <div class="menu-toggle">
                 <input type="checkbox">
@@ -152,6 +154,12 @@
             </div>
         </div>
     </section>
+    <section id="scraping">
+        <div class="container">
+            <h2>Data Scraping 1</h2>
+            <div id="headlines_json"></div>
+        </div>
+    </section>
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -185,6 +193,23 @@
             }
             lastScrollTop = currentScroll;
         });
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $.get('data.json', function(obj) {
+                var str = "<table border = 1>";
+                str +="<tr><td>NO</td><td>Judul</td><td>Kategori</td><td>Waktu Publish</td><td>Waktu Scraping</td><tr>";
+                $.each(obj, function(n, data){
+                    str+="<tr><td>"+(n+1)+"</td>";
+                    str+="<td>"+data.judul+"</td>";
+                    str+="<td>"+data.kategori+"</td>";
+                    str+="<td>"+data.waktu_publikasi+"</td>";
+                    str+="<td>"+data.waktu_pengambilan_data+"</td></tr>";
+                });
+                str+="</tabel>";
+                $('#headlines_json').html(str);
+            });
+        });        
     </script>
 </body>
 
